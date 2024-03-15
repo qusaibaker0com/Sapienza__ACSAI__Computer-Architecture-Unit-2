@@ -26,37 +26,3 @@
 
 <h2>Acknowledgment</h2>
 <p>This exercise is part of my university coursework for the "Computer Architecture Unit 2" in my degree program "Applied Computer Science and Artificial Intelligence" at Sapienza University of Rome.</p>
-
-
-
-
-
-
-<h1>Exercise: RISC-V Program for Integer Addition</h1>
-
-<h2>Introduction</h2>
-<p>In this exercise, I developed a RISC-V program aimed at performing integer addition. The primary objective is to demonstrate the capability of a RISC-V assembly program to perform basic arithmetic operations on integers.</p>
-
-<h2>Problem Statement</h2>
-<p>The task at hand involves creating a RISC-V program that stores two integers in the data segment and then computes their sum. The program should output the result on the console and terminate.</p>
-
-<h2>Solution Approach</h2>
-<p>To address the problem, I followed a straightforward approach:</p>
-
-<h3>Data Segment</h3>
-<p>In the data segment, I stored two integers: <code>5</code> and <code>-6</code>. These integers are loaded into registers later in the program.</p>
-
-<h3>Text Segment</h3>
-<p>The main logic of the program resides in the text segment:</p>
-<ol>
-  <li><strong>Load Integers:</strong> I used the <code>lw</code> instruction to load the two integers from memory into registers <code>t0</code> and <code>t1</code>.</li>
-  <li><strong>Addition:</strong> Using the <code>add</code> instruction, I computed the sum of the two integers and stored the result in register <code>a0</code>.</li>
-  <li><strong>Exit:</strong> I invoked the <code>ecall</code> instruction with the appropriate system call number to print the result on the console.</li>
-  <li><strong>Termination:</strong> Finally, I used another <code>ecall</code> instruction to terminate the program.</li>
-</ol>
-
-<h2>Conclusion</h2>
-<p>The RISC-V program successfully accomplishes the task of adding two integers and printing the result. It demonstrates the basic arithmetic capabilities of RISC-V assembly language.</p>
-
-<h2>Acknowledgment</h2>
-<p>This exercise is part of the "Computer Architecture Unit 2" course in the "Applied Computer Science and Artificial Intelligence" degree at Sapienza University of Rome.</p>
