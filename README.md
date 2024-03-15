@@ -23,3 +23,6 @@
 
 <h2>Conclusion</h2>
 <p>In conclusion, I successfully developed a RISC-V program to compute the sum of two integers stored in the data segment. The program adheres to the requirements provided and is capable of handling different integer values. This exercise allowed me to reinforce my understanding of RISC-V assembly language programming concepts.</p>
+
+<h2>Acknowledgment</h2>
+<p>This exercise is part of my university coursework for the "Computer Architecture Unit 2" in my degree program "Applied Computer Science and Artificial Intelligence" at Sapienza University of Rome.</p>
