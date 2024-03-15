@@ -28,52 +28,35 @@
 <p>This exercise is part of my university coursework for the "Computer Architecture Unit 2" in my degree program "Applied Computer Science and Artificial Intelligence" at Sapienza University of Rome.</p>
 
 
-<h1>Exercise: RISC-V Program to Calculate Sum of Two Integers</h1>
+
+
+
+
+<h1>Exercise: RISC-V Program for Integer Addition</h1>
 
 <h2>Introduction</h2>
-<p>In this exercise, I developed a RISC-V program to calculate the sum of two integers stored in the data segment and print the result to the console.</p>
+<p>In this exercise, I developed a RISC-V program aimed at performing integer addition. The primary objective is to demonstrate the capability of a RISC-V assembly program to perform basic arithmetic operations on integers.</p>
 
 <h2>Problem Statement</h2>
-<p>The task is to write a RISC-V program that takes two integers from the data segment, calculates their sum, and prints the result on the console before exiting. The program should be designed to work regardless of the content of the two integers provided.</p>
+<p>The task at hand involves creating a RISC-V program that stores two integers in the data segment and then computes their sum. The program should output the result on the console and terminate.</p>
 
 <h2>Solution Approach</h2>
-<p>To solve this problem, I followed a straightforward approach:</p>
+<p>To address the problem, I followed a straightforward approach:</p>
 
 <h3>Data Segment</h3>
-<p>In the data segment, I defined two words to store the two integers. These integers can be of any value, positive or negative.</p>
-<code>
-.data
-    .word 5
-    .word -6
-</code>
+<p>In the data segment, I stored two integers: <code>5</code> and <code>-6</code>. These integers are loaded into registers later in the program.</p>
 
 <h3>Text Segment</h3>
-<p>The main code logic is implemented in the text segment. Here's a breakdown of the steps:</p>
+<p>The main logic of the program resides in the text segment:</p>
 <ol>
-    <li><strong>Load Integers:</strong> Load the two integers from the data segment into registers.</li>
-    <code>
-        lui s0, 0x10010
-        lw t0, 0(s0)     // Load first integer into t0
-        lw t1, 4(s0)     // Load second integer into t1
-    </code>
-    <li><strong>Calculate Sum:</strong> Add the two integers together and store the result in a register.</li>
-    <code>
-        add a0, t0, t1   // Calculate sum and store in a0
-    </code>
-    <li><strong>Print Result:</strong> Use the ecall instruction to print the result on the console.</li>
-    <code>
-        addi a7, zero, 1  // Set a7 register for printing
-        ecall             // Print the result
-    </code>
-    <li><strong>Exit:</strong> Use the ecall instruction to exit the program.</li>
-    <code>
-        addi a7, zero, 10 // Set a7 register for program exit
-        ecall             // Exit the program
-    </code>
+  <li><strong>Load Integers:</strong> I used the <code>lw</code> instruction to load the two integers from memory into registers <code>t0</code> and <code>t1</code>.</li>
+  <li><strong>Addition:</strong> Using the <code>add</code> instruction, I computed the sum of the two integers and stored the result in register <code>a0</code>.</li>
+  <li><strong>Exit:</strong> I invoked the <code>ecall</code> instruction with the appropriate system call number to print the result on the console.</li>
+  <li><strong>Termination:</strong> Finally, I used another <code>ecall</code> instruction to terminate the program.</li>
 </ol>
 
 <h2>Conclusion</h2>
-<p>The RISC-V program successfully accomplishes the task of calculating the sum of two integers provided in the data segment and printing the result to the console. It demonstrates basic arithmetic operations and system calls in the RISC-V instruction set architecture.</p>
+<p>The RISC-V program successfully accomplishes the task of adding two integers and printing the result. It demonstrates the basic arithmetic capabilities of RISC-V assembly language.</p>
 
 <h2>Acknowledgment</h2>
-<p>This exercise was completed as part of the "Computer Architecture Unit 2" course in the Applied Computer Science and Artificial Intelligence degree program at Sapienza University of Rome.</p>
+<p>This exercise is part of the "Computer Architecture Unit 2" course in the "Applied Computer Science and Artificial Intelligence" degree at Sapienza University of Rome.</p>
