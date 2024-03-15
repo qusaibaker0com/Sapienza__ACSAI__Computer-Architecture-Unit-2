@@ -26,3 +26,54 @@
 
 <h2>Acknowledgment</h2>
 <p>This exercise is part of my university coursework for the "Computer Architecture Unit 2" in my degree program "Applied Computer Science and Artificial Intelligence" at Sapienza University of Rome.</p>
+
+
+<h1>Exercise: RISC-V Program to Calculate Sum of Two Integers</h1>
+
+<h2>Introduction</h2>
+<p>In this exercise, I developed a RISC-V program to calculate the sum of two integers stored in the data segment and print the result to the console.</p>
+
+<h2>Problem Statement</h2>
+<p>The task is to write a RISC-V program that takes two integers from the data segment, calculates their sum, and prints the result on the console before exiting. The program should be designed to work regardless of the content of the two integers provided.</p>
+
+<h2>Solution Approach</h2>
+<p>To solve this problem, I followed a straightforward approach:</p>
+
+<h3>Data Segment</h3>
+<p>In the data segment, I defined two words to store the two integers. These integers can be of any value, positive or negative.</p>
+<code>
+.data
+    .word 5
+    .word -6
+</code>
+
+<h3>Text Segment</h3>
+<p>The main code logic is implemented in the text segment. Here's a breakdown of the steps:</p>
+<ol>
+    <li><strong>Load Integers:</strong> Load the two integers from the data segment into registers.</li>
+    <code>
+        lui s0, 0x10010
+        lw t0, 0(s0)     // Load first integer into t0
+        lw t1, 4(s0)     // Load second integer into t1
+    </code>
+    <li><strong>Calculate Sum:</strong> Add the two integers together and store the result in a register.</li>
+    <code>
+        add a0, t0, t1   // Calculate sum and store in a0
+    </code>
+    <li><strong>Print Result:</strong> Use the ecall instruction to print the result on the console.</li>
+    <code>
+        addi a7, zero, 1  // Set a7 register for printing
+        ecall             // Print the result
+    </code>
+    <li><strong>Exit:</strong> Use the ecall instruction to exit the program.</li>
+    <code>
+        addi a7, zero, 10 // Set a7 register for program exit
+        ecall             // Exit the program
+    </code>
+</ol>
+
+<h2>Conclusion</h2>
+<p>The RISC-V program successfully accomplishes the task of calculating the sum of two integers provided in the data segment and printing the result to the console. It demonstrates basic arithmetic operations and system calls in the RISC-V instruction set architecture.</p>
+
+<h2>Acknowledgment</h2>
+<p>This exercise was completed as part of the "Computer Architecture Unit 2" course in the Applied Computer Science and Artificial Intelligence degree program at Sapienza University of Rome.</p>
